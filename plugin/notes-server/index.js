@@ -4,6 +4,8 @@ var fs        = require('fs');
 var io        = require('socket.io');
 var Mustache  = require('mustache');
 
+var NAME = 'Airlabs.Slides';
+
 var app       = express();
 var staticDir = express.static;
 var server    = http.createServer(app);
@@ -33,14 +35,14 @@ io.on( 'connection', function( socket ) {
 
 });
 
-[ 'css', 'js', 'images', 'plugin', 'lib' ].forEach( function( dir ) {
+[ 'css', 'js', 'images', 'plugin', 'lib', NAME ].forEach( function( dir ) {
 	app.use( '/' + dir, staticDir( opts.baseDir + dir ) );
 });
 
 app.get('/', function( req, res ) {
 
 	res.writeHead( 200, { 'Content-Type': 'text/html' } );
-	fs.createReadStream( opts.baseDir + '/index.html' ).pipe( res );
+	fs.createReadStream( opts.baseDir + '/' + NAME + '.html' ).pipe( res );
 
 });
 
