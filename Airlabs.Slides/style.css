@@ -1,0 +1,11 @@
+.no-border, .images-autofit img {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.images-autofit img{
+    box-sizing: border-box;
+    max-width: 25%;
+    max-height: 25%;
+}

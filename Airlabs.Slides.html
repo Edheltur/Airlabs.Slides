@@ -4,37 +4,66 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>reveal.js</title>
+    <title>AI&R Lab</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/solarized.css">
-
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
+    <link rel="stylesheet" href="Airlabs.Slides/style.css">
 </head>
+
 <body>
 <div class="reveal">
     <div class="slides">
-        <script>
-            var TOTAL_SLIDES = 2;
-            var currentScript;
-            currentScript = document.currentScript || document.scripts[document.scripts.length - 1];
-            for (var i = 1; i <= TOTAL_SLIDES; i++) {
-                var slide = document.createElement("section");
-                slide.setAttribute("data-external", "Airlabs.Slides/" + i + ".html");
-                currentScript.parentNode.appendChild(slide)
-            }
-            currentScript.parentNode.removeChild(currentScript);
-        </script>
+        <section>
+            <h1>AI&R Lab</h1>
+            <p class="fragment fade-up">Artificial Intelligence and Research</p>
+            <img class="stretch no-border" src="Airlabs.Slides/logo.svg" alt="logo">
+        </section>
+        <section>
+            <h1>Кто мы?</h1>
+        </section>
+        <section>
+            <section>
+                <h1>Eurobot</h1>
+                <p class="fragment fade-up">90 секунд</p>
+                <p class="fragment fade-up">2 команды</p>
+                <p class="fragment fade-up">Полная автономность</p>
+                <p class="fragment fade-up">Выполнение разлчных заданий</p>
+                <p class="fragment fade-up">Предотвращение столкновений</p>
+            </section>
+            <section>
+                <img class="stretch" src="Airlabs.Slides/field2016.jpg" alt="field2016">
+            </section>
+            <section>
+                <img class="stretch" src="Airlabs.Slides/field2015.png" alt="field2015">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Инструменты<br>и<br>технологии</h2>
+            </section>
+            <section class="images-autofit">
+                <img src="Airlabs.Slides/arduino.png" alt="arduino">
+                <img src="Airlabs.Slides/spider.png" alt="spider">
+                <img src="Airlabs.Slides/cnc.png" alt="cnc">
+                <img src="Airlabs.Slides/solidworks.png" alt="solidworks">
+                <img src="Airlabs.Slides/csharp.png" alt="csharp">
+                <img src="Airlabs.Slides/gitlab.png" alt="gitlab">
+                <img src="Airlabs.Slides/python.svg" alt="python">
+                <img src="Airlabs.Slides/web.png" alt="web">
+            </section>
+        </section>
+        <section>
+            <h2 class="fragment fade-out">Вопросы?</h2>
+            <h2 class="fragment fade-up">
+                Спасибо за внимание!</h2>
+
+            <img class="stretch no-border"
+                 style="position:absolute;"
+                 src="Airlabs.Slides/questions.gif"
+                 alt="questions">
+        </section>
+
     </div>
 </div>
 
@@ -48,21 +77,9 @@
 
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
-            {
-                src: 'plugin/external/external.js', condition: function () {
-                return !!document.querySelector('[data-external]');
-            }
-            },
             {src: 'socket.io/socket.io.js', async: true},
             {src: 'plugin/notes-server/client.js', async: true},
-            {src: 'plugin/markdown/marked.js'},
-            {src: 'plugin/markdown/markdown.js'},
-            {src: 'plugin/notes/notes.js', async: true},
-            {
-                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                hljs.initHighlightingOnLoad();
-            }
-            }
+            {src: 'plugin/notes/notes.js', async: true}
         ]
     });
 </script>
